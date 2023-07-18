@@ -20,7 +20,23 @@ const HomeComponent = ({ message }) => {
     .expect("Content-Type", "text/html; charset=utf-8")
     .expect(200, "<!DOCTYPE html><div><h1>Hello world</h1></div>")
     .end(function (err, res) {
-      console.log(res.body);
+      if (err) throw err;
+    });
+}
+
+// should render simple component properly
+{
+  const SimpleComponent = () => {
+    return h("h1", null, "Hello world");
+  };
+  app.get("/simple", (req, res) => {
+    res.render(SimpleComponent);
+  });
+  supertest(app)
+    .get("/simple")
+    .expect("Content-Type", "text/html; charset=utf-8")
+    .expect(200, "<!DOCTYPE html><h1>Hello world</h1>")
+    .end(function (err, res) {
       if (err) throw err;
     });
 }
