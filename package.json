@@ -1,0 +1,25 @@
+{
+  "name": "@lite-jsx/express",
+  "version": "0.0.1",
+  "description": "Middleware that uses lite-jsx to render JSX templates in an Express application.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lite-jsx/express.git"
+  },
+  "author": "Daniel Prates",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lite-jsx/express/issues"
+  },
+  "homepage": "https://github.com/lite-jsx/express#readme",
+  "keywords": [
+    "jsx",
+    "html",
+    "express",
+    "middleware"
+  ]
+}
