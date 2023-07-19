@@ -7,27 +7,23 @@
  * @returns {void}
  */
 const liteJsx = (req, res, next) => {
-  // Bind the original render function to a variable.
-  const oldRender = res.render.bind(res);
-
-  // Override the render function to add support for JSX templates.
   res.render = function (template, data) {
-    // If the template is a string, call the original render function.
     if (typeof template === "string") {
-      return oldRender(template, data);
+      res.status(200).send(template);
+      return;
     }
     try {
-      // Otherwise, render the JSX template using lite-jsx.
       const html =
         "<!DOCTYPE html>" + template({ ...data, $req: req, $res: res });
-      return res.send(html);
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
+      res.status(200).send(html);
+      return;
     } catch (err) {
-      // If there is an error, pass it to the Express error handler.
       this.req.next(err);
+      return;
     }
   }.bind(res);
 
-  // Call the next middleware in the chain.
   next();
 };
 
