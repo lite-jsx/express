@@ -1,6 +1,6 @@
 {
   "name": "@lite-jsx/express",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Middleware that uses lite-jsx to render JSX templates in an Express application.",
   "main": "src/index.js",
   "types": "src/index.d.ts",
