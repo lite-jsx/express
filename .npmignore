@@ -1,0 +1,8 @@
+node_modules
+tests
+.gitignore
+.eslintignore
+.git
+.github
+*.md
+*.properties
