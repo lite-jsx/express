@@ -17,7 +17,7 @@ declare module "express-serve-static-core" {
      * // Render a raw template
      * res.view(h("div", null, h("h1", null, message)), { message: "Hello, World!" });
      */
-    view(template: string | Function, data?: object): void;
+    view(template: Function, data?: object): void;
   }
 }
 
@@ -38,7 +38,7 @@ declare module "express" {
      * // Render a raw template
      * res.view(h("div", null, h("h1", null, message)), { message: "Hello, World!" });
      */
-    view(template: string | Function, data?: object): void;
+    view(template: Function, data?: object): void;
   }
 }
 
