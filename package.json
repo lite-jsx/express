@@ -3,6 +3,8 @@
   "version": "0.0.1",
   "description": "Middleware that uses lite-jsx to render JSX templates in an Express application.",
   "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "type": "commonjs",
   "scripts": {
     "test": "node tests"
   },
