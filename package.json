@@ -6,7 +6,7 @@
   "types": "src/index.d.ts",
   "type": "commonjs",
   "scripts": {
-    "test": "node tests"
+    "test": "node src/index.spec.js"
   },
   "repository": {
     "type": "git",
