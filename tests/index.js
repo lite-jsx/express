@@ -12,7 +12,7 @@ app.use(liteJsx);
     return h("div", null, h("h1", null, message));
   };
   app.get("/complex", (req, res) => {
-    res.render(ComplexComponent, { message: "Hello world" });
+    res.view(ComplexComponent, { message: "Hello world" });
   });
   supertest(app)
     .get("/complex")
@@ -29,7 +29,7 @@ app.use(liteJsx);
     return h("h1", null, "Hello world");
   };
   app.get("/simple", (req, res) => {
-    res.render(SimpleComponent);
+    res.view(SimpleComponent);
   });
   supertest(app)
     .get("/simple")
@@ -43,7 +43,7 @@ app.use(liteJsx);
 // should render html as string properly
 {
   app.get("/html", (req, res) => {
-    res.render("<h1>Hello world</h1>");
+    res.view("<h1>Hello world</h1>");
   });
   supertest(app)
     .get("/html")

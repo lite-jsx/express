@@ -7,7 +7,7 @@
  * @returns {void}
  */
 const liteJsx = (req, res, next) => {
-  res.render = function (template, data) {
+  res.view = function (template, data) {
     if (typeof template === "string") {
       res.status(200).send(template);
       return;
