@@ -2,11 +2,11 @@
   "name": "@lite-jsx/express",
   "version": "1.0.0",
   "description": "Middleware that uses lite-jsx to render JSX templates in an Express application.",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "type": "commonjs",
   "scripts": {
-    "test": "node src/index.spec.js"
+    "test": "node lib/index.spec.js"
   },
   "repository": {
     "type": "git",
