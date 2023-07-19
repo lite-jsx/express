@@ -18,6 +18,9 @@ jobs:
       - name: Check conventional commits
         uses: webiny/action-conventional-commits@v1.1.0
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Run all tests
         run: npm test
 
