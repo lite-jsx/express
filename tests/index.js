@@ -6,17 +6,16 @@ const { h } = require("lite-jsx");
 const app = express();
 app.use(liteJsx);
 
-const HomeComponent = ({ message }) => {
-  return h("div", null, h("h1", null, message));
-};
-
-// should render component properly
+// should render complex component properly
 {
-  app.get("/home", (req, res) => {
-    res.render(HomeComponent, { message: "Hello world" });
+  const ComplexComponent = ({ message }) => {
+    return h("div", null, h("h1", null, message));
+  };
+  app.get("/complex", (req, res) => {
+    res.render(ComplexComponent, { message: "Hello world" });
   });
   supertest(app)
-    .get("/home")
+    .get("/complex")
     .expect("Content-Type", "text/html; charset=utf-8")
     .expect(200, "<!DOCTYPE html><div><h1>Hello world</h1></div>")
     .end(function (err, res) {
@@ -36,6 +35,20 @@ const HomeComponent = ({ message }) => {
     .get("/simple")
     .expect("Content-Type", "text/html; charset=utf-8")
     .expect(200, "<!DOCTYPE html><h1>Hello world</h1>")
+    .end(function (err, res) {
+      if (err) throw err;
+    });
+}
+
+// should render html as string properly
+{
+  app.get("/html", (req, res) => {
+    res.render("<h1>Hello world</h1>");
+  });
+  supertest(app)
+    .get("/html")
+    .expect("Content-Type", "text/html; charset=utf-8")
+    .expect(200, "<h1>Hello world</h1>")
     .end(function (err, res) {
       if (err) throw err;
     });
