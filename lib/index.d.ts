@@ -12,12 +12,12 @@ declare module "express-serve-static-core" {
      *
      * @example
      * // Render a JSX component
-     * res.view(Home, { message: "Hello, World!" });
+     * res.render(Home, { message: "Hello, World!" });
      *
      * // Render a raw template
-     * res.view(h("div", null, h("h1", null, message)), { message: "Hello, World!" });
+     * res.render(h("div", null, h("h1", null, message)), { message: "Hello, World!" });
      */
-    view(template: Function, data?: object): void;
+    render(template: Function, data?: object): void;
   }
 }
 
@@ -33,12 +33,12 @@ declare module "express" {
      *
      * @example
      * // Render a JSX component
-     * res.view(Home, { message: "Hello, World!" });
+     * res.render(Home, { message: "Hello, World!" });
      *
      * // Render a raw template
-     * res.view(h("div", null, h("h1", null, message)), { message: "Hello, World!" });
+     * res.render(h("div", null, h("h1", null, message)), { message: "Hello, World!" });
      */
-    view(template: Function, data?: object): void;
+    render(template: Function, data?: object): void;
   }
 }
 
@@ -57,7 +57,7 @@ declare namespace LiteJSX {
    *
    * app.get("/", (req, res) => {
    *   const data = { message: "Hello, World!" };
-   *   res.view(Home, data);
+   *   res.render(Home, data);
    * });
    *
    * app.listen(3000, () => {
